@@ -1,0 +1,15 @@
+export const SITE_DATA = {
+  name: "DMK Industrial Consultancy",
+  shortName: "DMK Consultancy",
+  location: "Srikakulam, Andhra Pradesh, India",
+  fullAddress: "DMK Industrial Consultancy, Opposite DLTC ITI, Bondilipuram, Srikakulam, Andhra Pradesh - 532001",
+  phonePrimary: "+91 91000 44011",
+  phoneSecondary: "+91 91000 44011",
+  phoneRaw: "+919100044011",
+  email: "info@dmkconsultancy.in",
+  workingHours: "Mon - Sat: 9:30 AM To 6:30 PM",
+  whatsappUrl: "https://wa.me/919100044011?text=Hello%20DMK%20Industrial%20Consultancy,%20I%20would%20like%20to%20discuss%20my%20industrial%20project%20requirement.",
+  mapsUrl: "https://maps.google.com/?q=DMK+Industrial+Consultancy+Srikakulam",
+  siteUrl: "https://dmkconsultancy.in",
+  ogImage: "/dmk-hero.png",
+};
