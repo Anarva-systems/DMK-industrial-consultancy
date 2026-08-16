@@ -53,25 +53,25 @@ export const Navbar: React.FC = () => {
           : "bg-gradient-to-b from-black/95 via-navy-950/70 to-transparent border-b border-white/15 py-4 lg:py-6"
       }`}
     >
-      <div className="max-w-[1680px] mx-auto px-5 sm:px-8 lg:px-10 flex items-center justify-between">
-        {/* Original DMK mark supplied with the visual design */}
-        <a href="#home" className="flex items-center group" aria-label="DMK Industrial Consultancy home">
+      <div className="max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between gap-4">
+        {/* DMK Brand Logo (Always visible on Left with shrink-0) */}
+        <a href="#home" className="flex items-center shrink-0 group" aria-label="DMK Industrial Consultancy home">
           <img
             src="/logo.png"
             alt="DMK Industrial Consultancy"
-            className="h-14 w-14 rounded-sm object-contain bg-white transition-transform duration-200 group-hover:scale-105 lg:h-[78px] lg:w-[78px]"
+            className="h-10 sm:h-12 lg:h-16 w-auto object-contain bg-white p-1 rounded-md border border-white/20 shadow-md transition-transform duration-200 group-hover:scale-105"
           />
         </a>
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-7 lg:gap-10">
+        {/* Desktop & Tablet Navigation Links */}
+        <nav className="hidden md:flex items-center gap-3 lg:gap-7 xl:gap-9">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
             return (
               <a
                 key={link.id}
                 href={link.href}
-                className={`relative text-xs font-bold tracking-widest transition-colors py-1 ${
+                className={`relative text-[11px] lg:text-xs font-black uppercase tracking-wider transition-colors py-1 whitespace-nowrap ${
                   isActive ? "text-[#FF5500]" : "text-gray-100 hover:text-white"
                 }`}
               >
@@ -85,15 +85,15 @@ export const Navbar: React.FC = () => {
         </nav>
 
         {/* Right CTA & Language Toggle */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-2.5 lg:gap-4 shrink-0">
           <LanguageSwitcher />
-          <Button href="#contact" variant="primary" size="lg" showArrow className="min-w-[215px] lg:min-w-[280px] rounded-xl">
+          <Button href="#contact" variant="primary" size="md" showArrow className="px-3.5 py-2.5 text-xs lg:text-sm font-bold min-w-0 rounded-xl whitespace-nowrap">
             {t.nav.getConsultation}
           </Button>
         </div>
 
         {/* Mobile Controls */}
-        <div className="flex md:hidden items-center gap-3">
+        <div className="flex md:hidden items-center gap-2.5 shrink-0">
           <LanguageSwitcher />
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

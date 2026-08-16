@@ -107,3 +107,10 @@ body {
     clip-path: none;
   }
 }
+
+/* Hide dev overlay lightning bolt mark */
+nextjs-portal,
+[data-nextjs-toast],
+[data-nextjs-dialog-overlay] {
+  display: none !important;
+}

@@ -97,22 +97,22 @@ export const ContactSection: React.FC = () => {
       {/* ── BOTTOM 4 GUARANTEES BAR ── */}
       <div className="bg-white border-t border-slate-200 py-8 lg:py-10">
         <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-200 gap-6 sm:gap-0">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-200 gap-6 sm:gap-0">
             {guarantees.map((item, idx) => {
               const Icon = item.icon;
               return (
                 <div
                   key={idx}
-                  className="flex items-start gap-4 px-4 sm:px-6 py-2 first:pl-0 last:pr-0"
+                  className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 px-2 sm:px-6 py-2 first:pl-0 last:pr-0"
                 >
                   <div className="w-10 h-10 rounded-full border border-[#FF5500]/30 bg-[#FFF0E8] flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Icon className="w-5 h-5 text-[#FF5500]" />
                   </div>
                   <div>
-                    <h4 className="text-xs sm:text-sm font-black text-[#050C18] uppercase tracking-wider">
+                    <h4 className="text-[11px] sm:text-xs lg:text-sm font-black text-[#050C18] uppercase tracking-wider">
                       {item.title}
                     </h4>
-                    <p className="text-xs text-gray-500 mt-1 leading-relaxed font-normal">
+                    <p className="text-[10px] sm:text-xs text-gray-500 mt-1 leading-relaxed font-normal">
                       {item.description}
                     </p>
                   </div>
