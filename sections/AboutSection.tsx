@@ -25,13 +25,12 @@ export const AboutSection: React.FC = () => {
     <section id="about" className="overflow-hidden bg-white">
       {/* ── TOP HERO AREA ── */}
       <div className="relative bg-[#FAFAFA] overflow-hidden min-h-[600px] lg:min-h-[660px]">
-        {/* Background photo filling top-right area with smooth gradient overlay */}
+        {/* Background photo filling full vertical height on right with diagonal clip path */}
         <div
-          className="absolute top-0 right-0 w-full lg:w-[58%] h-[340px] sm:h-[400px] lg:h-full bg-cover bg-center bg-no-repeat transition-transform duration-700 hover:scale-105"
+          className="absolute inset-y-0 right-0 w-full lg:w-[52%] bg-cover bg-center bg-no-repeat diagonal-image-right"
           style={{ backgroundImage: "url('/about-bg.jpg')" }}
         />
-        {/* Gradient overlay to blend left white background with photo */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FAFAFA] via-[#FAFAFA]/95 via-[48%] to-transparent lg:via-[#FAFAFA]/60 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FAFAFA] via-[#FAFAFA]/95 via-[45%] to-transparent lg:via-[#FAFAFA]/60 pointer-events-none" />
 
         <div className="relative z-10 max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10 pt-16 lg:pt-20 pb-12 lg:pb-0">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-start">
