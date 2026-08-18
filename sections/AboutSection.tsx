@@ -115,18 +115,18 @@ export const AboutSection: React.FC = () => {
       </div>
 
       {/* ── QUOTE FOOTER BANNER ── */}
-      <div className="relative overflow-hidden bg-[#050C18] py-11 lg:py-14 border-t border-white/10">
+      <div className="relative overflow-hidden bg-[#050C18] py-10 lg:py-12 border-t border-white/10">
         <div
-          className="absolute inset-0 blueprint-bg opacity-20"
+          className="absolute inset-0 blueprint-bg opacity-15"
           style={{ backgroundImage: "url('/blueprint-bg.jpg')" }}
         />
-        <div className="relative z-10 max-w-[1240px] mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-5 px-5 sm:px-8">
-          <Quote className="h-10 w-10 sm:h-12 sm:w-12 shrink-0 fill-[#FF5500] text-[#FF5500] mt-1 sm:mt-0" />
+        <div className="relative z-10 max-w-[1240px] mx-auto flex items-start sm:items-center gap-4 px-5 sm:px-8">
+          <Quote className="h-9 w-9 sm:h-10 sm:w-10 shrink-0 fill-[#FF5500] text-[#FF5500] mt-1 sm:mt-0" />
           <div className="space-y-1">
-            <p className="text-base sm:text-xl text-white font-normal leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-white font-medium leading-relaxed">
               {aboutT.quotePart1}
             </p>
-            <p className="text-base sm:text-xl text-[#FF5500] font-black leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-[#FF5500] font-black leading-relaxed">
               {aboutT.quotePart2}
             </p>
           </div>

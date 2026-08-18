@@ -75,7 +75,7 @@ export const ExpertiseSection: React.FC = () => {
         {/* Right Side Image + Overlay Card */}
         <div className="relative min-h-[460px] lg:min-h-full flex items-end">
           <div
-            className="absolute inset-0 bg-cover bg-center diagonal-image-right"
+            className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: "url('/industry-night.jpg')" }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#050C18] via-transparent to-transparent lg:hidden" />
