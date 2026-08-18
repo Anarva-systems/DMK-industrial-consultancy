@@ -24,36 +24,43 @@ export const AboutSection: React.FC = () => {
   return (
     <section id="about" className="overflow-hidden bg-white">
       {/* ── TOP HERO AREA ── */}
-      <div className="relative bg-[#FAFAFA] overflow-hidden min-h-[600px] lg:min-h-[660px]">
-        {/* Background photo filling full vertical height on right with diagonal clip path */}
+      <div className="relative bg-[#F7F8F9] overflow-hidden min-h-[580px] lg:min-h-[640px] flex items-center">
+        {/* Background photo filling top-right with diagonal clip path */}
         <div
-          className="absolute inset-y-0 right-0 w-full lg:w-[52%] bg-cover bg-center bg-no-repeat diagonal-image-right"
+          className="absolute inset-y-0 right-0 w-full lg:w-[54%] bg-cover bg-center bg-no-repeat diagonal-image-right"
           style={{ backgroundImage: "url('/about-bg.jpg')" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FAFAFA] via-[#FAFAFA]/95 via-[45%] to-transparent lg:via-[#FAFAFA]/60 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#F7F8F9] via-[#F7F8F9]/95 via-[46%] to-transparent lg:via-[#F7F8F9]/60 pointer-events-none" />
 
-        <div className="relative z-10 max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10 pt-16 lg:pt-20 pb-12 lg:pb-0">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-start">
+        <div className="relative z-10 max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10 w-full py-16 lg:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
             {/* Left Content Area */}
-            <div className="lg:col-span-6 space-y-6 pt-2">
+            <div className="lg:col-span-6 space-y-6">
               <SectionLabel>{aboutT.tag}</SectionLabel>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-[2.85rem] font-black tracking-tight leading-[1.18] text-black">
-                <span>{aboutT.titlePart1}</span>
-                {aboutT.titlePart2 && <span className="block">{aboutT.titlePart2}</span>}
-                <span className="text-[#FF5500] block mt-1">{aboutT.titleHighlight}</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-[3rem] font-black tracking-tight leading-[1.12] text-black">
+                Local understanding.
+                <br />
+                Professional guidance.
+                <br />
+                <span className="text-[#FF5500]">Built for your success.</span>
               </h2>
 
-              <div className="w-14 h-1 bg-[#FF5500] rounded-full transition-all duration-300 hover:w-20" />
+              <div className="w-12 h-1 bg-[#FF5500] rounded-full transition-all duration-300 hover:w-16" />
 
               <div className="space-y-4 text-xs sm:text-sm lg:text-base leading-relaxed text-gray-700 font-normal max-w-lg">
-                <p>{aboutT.paragraph}</p>
+                <p>
+                  DMK Industrial Consultancy is an individual consultancy based in Srikakulam, Andhra Pradesh.
+                </p>
+                <p>
+                  We work with businesses and entrepreneurs requiring professional guidance for their industrial requirements, helping bring greater clarity to planning and execution.
+                </p>
               </div>
             </div>
 
             {/* Right Overlapping Angled Dark Container Cards (01, 02, 03) */}
-            <div className="lg:col-span-6 lg:mt-32">
-              <div className="bg-[#060D1E] rounded-2xl lg:rounded-tl-[2.5rem] lg:rounded-tr-none border border-white/10 p-6 sm:p-8 lg:p-10 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-[#FF5500]/40 hover:shadow-orange-500/10">
+            <div className="lg:col-span-6 lg:-ml-8">
+              <div className="bg-[#060D1E] rounded-2xl lg:rounded-tl-[3rem] border border-white/10 p-6 sm:p-8 lg:p-10 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-[#FF5500]/40">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4 divide-y sm:divide-y-0 sm:divide-x divide-white/15">
                   {aboutT.cards.map((card, index) => {
                     const Icon = cardIcons[index] ?? MapPin;
