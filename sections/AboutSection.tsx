@@ -25,9 +25,9 @@ export const AboutSection: React.FC = () => {
     <section id="about" className="overflow-hidden bg-white">
       {/* ── TOP HERO AREA ── */}
       <div className="relative bg-[#FAFAFA] overflow-hidden min-h-[600px] lg:min-h-[660px]">
-        {/* Background photo filling top-right area */}
+        {/* Background photo filling top-right area with smooth gradient overlay */}
         <div
-          className="absolute top-0 right-0 w-full lg:w-[58%] h-[340px] sm:h-[400px] lg:h-full bg-cover bg-center bg-no-repeat"
+          className="absolute top-0 right-0 w-full lg:w-[58%] h-[340px] sm:h-[400px] lg:h-full bg-cover bg-center bg-no-repeat transition-transform duration-700 hover:scale-105"
           style={{ backgroundImage: "url('/about-bg.jpg')" }}
         />
         {/* Gradient overlay to blend left white background with photo */}
@@ -39,44 +39,37 @@ export const AboutSection: React.FC = () => {
             <div className="lg:col-span-6 space-y-6 pt-2">
               <SectionLabel>{aboutT.tag}</SectionLabel>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-[2.85rem] font-black tracking-tight leading-[1.15] text-black">
-                Local understanding.
-                <br />
-                Professional guidance.
-                <br />
-                <span className="text-[#FF5500]">Built for your success.</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-[2.85rem] font-black tracking-tight leading-[1.18] text-black">
+                <span>{aboutT.titlePart1}</span>
+                {aboutT.titlePart2 && <span className="block">{aboutT.titlePart2}</span>}
+                <span className="text-[#FF5500] block mt-1">{aboutT.titleHighlight}</span>
               </h2>
 
-              <div className="w-14 h-1 bg-[#FF5500] rounded-full" />
+              <div className="w-14 h-1 bg-[#FF5500] rounded-full transition-all duration-300 hover:w-20" />
 
               <div className="space-y-4 text-xs sm:text-sm lg:text-base leading-relaxed text-gray-700 font-normal max-w-lg">
-                <p>
-                  DMK Industrial Consultancy is an individual consultancy based in Srikakulam, Andhra Pradesh.
-                </p>
-                <p>
-                  We work with businesses and entrepreneurs requiring professional guidance for their industrial requirements, helping bring greater clarity to planning and execution.
-                </p>
+                <p>{aboutT.paragraph}</p>
               </div>
             </div>
 
             {/* Right Overlapping Angled Dark Container Cards (01, 02, 03) */}
             <div className="lg:col-span-6 lg:mt-32">
-              <div className="bg-[#060D1E] rounded-2xl lg:rounded-tl-[2.5rem] lg:rounded-tr-none border border-white/10 p-6 sm:p-8 lg:p-10 shadow-2xl backdrop-blur-md">
+              <div className="bg-[#060D1E] rounded-2xl lg:rounded-tl-[2.5rem] lg:rounded-tr-none border border-white/10 p-6 sm:p-8 lg:p-10 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-[#FF5500]/40 hover:shadow-orange-500/10">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4 divide-y sm:divide-y-0 sm:divide-x divide-white/15">
                   {aboutT.cards.map((card, index) => {
                     const Icon = cardIcons[index] ?? MapPin;
                     return (
                       <div
                         key={card.number}
-                        className="pt-5 sm:pt-0 first:pt-0 sm:px-4 first:pl-0 last:pr-0 space-y-3 flex flex-col items-start"
+                        className="pt-5 sm:pt-0 first:pt-0 sm:px-4 first:pl-0 last:pr-0 space-y-3 flex flex-col items-start group"
                       >
-                        <div className="w-12 h-12 rounded-full border border-white/20 bg-white/5 flex items-center justify-center flex-shrink-0">
-                          <Icon className="h-5 w-5 text-[#FF5500]" />
+                        <div className="w-12 h-12 rounded-full border border-white/20 bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-[#FF5500] group-hover:bg-[#FF5500]/10 transition-all duration-300">
+                          <Icon className="h-5 w-5 text-[#FF5500] group-hover:scale-110 transition-transform" />
                         </div>
                         <p className="text-xl font-black text-[#FF5500] leading-none pt-1">
                           {card.number}
                         </p>
-                        <h3 className="text-xs sm:text-sm font-black leading-tight tracking-wider text-white uppercase">
+                        <h3 className="text-xs sm:text-sm font-black leading-tight tracking-wider text-white uppercase group-hover:text-[#FF5500] transition-colors">
                           {card.title}
                         </h3>
                         <p className="text-[11px] sm:text-xs leading-relaxed text-slate-300 font-normal">
@@ -101,13 +94,13 @@ export const AboutSection: React.FC = () => {
               return (
                 <div
                   key={badge.title}
-                  className="flex items-start gap-4 px-3 sm:px-6 py-2 first:pl-0 last:pr-0"
+                  className="flex items-start gap-4 px-3 sm:px-6 py-2 first:pl-0 last:pr-0 group cursor-default"
                 >
-                  <div className="w-12 h-12 shrink-0 flex items-center justify-center rounded-full bg-black mt-0.5 shadow-md">
-                    <Icon className="h-6 w-6 text-[#FF5500]" />
+                  <div className="w-12 h-12 shrink-0 flex items-center justify-center rounded-full bg-black mt-0.5 shadow-md group-hover:bg-[#FF5500] transition-colors duration-300">
+                    <Icon className="h-6 w-6 text-[#FF5500] group-hover:text-white transition-colors duration-300" />
                   </div>
                   <div className="space-y-1">
-                    <h3 className="text-xs sm:text-sm font-black leading-tight tracking-wider text-black uppercase">
+                    <h3 className="text-xs sm:text-sm font-black leading-tight tracking-wider text-black uppercase group-hover:text-[#FF5500] transition-colors">
                       {badge.title}
                     </h3>
                     <p className="text-xs text-gray-500 leading-relaxed font-normal">
@@ -128,7 +121,7 @@ export const AboutSection: React.FC = () => {
           style={{ backgroundImage: "url('/blueprint-bg.jpg')" }}
         />
         <div className="relative z-10 max-w-[1180px] mx-auto flex items-start sm:items-center gap-4 px-5 sm:px-8">
-          <Quote className="h-8 w-8 sm:h-10 sm:w-10 shrink-0 fill-[#FF5500] text-[#FF5500] mt-1 sm:mt-0" />
+          <Quote className="h-8 w-8 sm:h-10 sm:w-10 shrink-0 fill-[#FF5500] text-[#FF5500] mt-1 sm:mt-0 animate-pulse" />
           <div className="space-y-1">
             <p className="text-sm sm:text-base lg:text-lg text-slate-200 font-normal leading-relaxed">
               {aboutT.quotePart1}

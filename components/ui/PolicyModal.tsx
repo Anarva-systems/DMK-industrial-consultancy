@@ -64,7 +64,7 @@ export const PolicyModal: React.FC<PolicyModalProps> = ({
               <p>
                 For questions regarding this Privacy Policy, please contact DMK Industrial Consultancy at:
                 <br />
-                <strong>Email:</strong> info@dmkconsultancy.in
+                <strong>Email:</strong> dmkindustrialconsultancy@gmail.com
                 <br />
                 <strong>Location:</strong> Srikakulam, Andhra Pradesh - 532001
               </p>
