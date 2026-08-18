@@ -24,15 +24,15 @@ export const AboutSection: React.FC = () => {
   return (
     <section id="about" className="overflow-hidden bg-white">
       {/* ── TOP HERO AREA ── */}
-      <div className="relative bg-[#F7F8F9] overflow-hidden min-h-[580px] lg:min-h-[640px] flex items-center">
-        {/* Background photo filling top-right with diagonal clip path */}
+      <div className="relative bg-[#F7F8F9] overflow-hidden min-h-[640px] lg:min-h-[720px] flex items-center">
+        {/* Full-height background photo on right with diagonal clip path */}
         <div
-          className="absolute inset-y-0 right-0 w-full lg:w-[54%] bg-cover bg-center bg-no-repeat diagonal-image-right"
+          className="absolute inset-y-0 right-0 w-full lg:w-[55%] bg-cover bg-center bg-no-repeat diagonal-image-right"
           style={{ backgroundImage: "url('/about-bg.jpg')" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#F7F8F9] via-[#F7F8F9]/95 via-[46%] to-transparent lg:via-[#F7F8F9]/60 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#F7F8F9] via-[#F7F8F9]/95 via-[48%] to-transparent lg:via-[#F7F8F9]/60 pointer-events-none" />
 
-        <div className="relative z-10 max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10 w-full py-16 lg:py-20">
+        <div className="relative z-10 max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10 w-full py-16 lg:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
             {/* Left Content Area */}
             <div className="lg:col-span-6 space-y-6">
@@ -59,8 +59,8 @@ export const AboutSection: React.FC = () => {
             </div>
 
             {/* Right Overlapping Angled Dark Container Cards (01, 02, 03) */}
-            <div className="lg:col-span-6 lg:-ml-12">
-              <div className="bg-[#060D1E] rounded-2xl lg:rounded-2xl border border-white/10 p-6 sm:p-8 lg:p-10 lg:pl-16 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-[#FF5500]/40 diagonal-image-right">
+            <div className="lg:col-span-6 lg:-ml-6">
+              <div className="bg-[#050C18] rounded-2xl lg:rounded-l-3xl border border-white/15 p-6 sm:p-8 lg:p-9 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-[#FF5500]/40">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4 divide-y sm:divide-y-0 sm:divide-x divide-white/15">
                   {aboutT.cards.map((card, index) => {
                     const Icon = cardIcons[index] ?? MapPin;
@@ -121,18 +121,18 @@ export const AboutSection: React.FC = () => {
       </div>
 
       {/* ── QUOTE FOOTER BANNER ── */}
-      <div className="relative overflow-hidden bg-[#060D1E] py-10 lg:py-12 border-t border-white/10">
+      <div className="relative overflow-hidden bg-[#050C18] py-11 lg:py-14 border-t border-white/10">
         <div
-          className="absolute inset-0 blueprint-bg opacity-15"
+          className="absolute inset-0 blueprint-bg opacity-20"
           style={{ backgroundImage: "url('/blueprint-bg.jpg')" }}
         />
-        <div className="relative z-10 max-w-[1180px] mx-auto flex items-start sm:items-center gap-4 px-5 sm:px-8">
-          <Quote className="h-8 w-8 sm:h-10 sm:w-10 shrink-0 fill-[#FF5500] text-[#FF5500] mt-1 sm:mt-0 animate-pulse" />
+        <div className="relative z-10 max-w-[1240px] mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-5 px-5 sm:px-8">
+          <Quote className="h-10 w-10 sm:h-12 sm:w-12 shrink-0 fill-[#FF5500] text-[#FF5500] mt-1 sm:mt-0" />
           <div className="space-y-1">
-            <p className="text-sm sm:text-base lg:text-lg text-slate-200 font-normal leading-relaxed">
+            <p className="text-base sm:text-xl text-white font-normal leading-relaxed">
               {aboutT.quotePart1}
             </p>
-            <p className="text-sm sm:text-base lg:text-lg text-[#FF5500] font-black leading-relaxed">
+            <p className="text-base sm:text-xl text-[#FF5500] font-black leading-relaxed">
               {aboutT.quotePart2}
             </p>
           </div>
