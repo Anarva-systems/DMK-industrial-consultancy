@@ -115,21 +115,24 @@ export const AboutSection: React.FC = () => {
       </div>
 
       {/* ── QUOTE FOOTER BANNER ── */}
-      <div className="relative overflow-hidden bg-[#050C18] py-10 lg:py-12 border-t border-white/10">
+      <div className="relative overflow-hidden bg-[#050C18] py-14 lg:py-20 border-t border-white/10 text-center">
         <div
           className="absolute inset-0 blueprint-bg opacity-15"
           style={{ backgroundImage: "url('/blueprint-bg.jpg')" }}
         />
-        <div className="relative z-10 max-w-[1240px] mx-auto flex items-start sm:items-center gap-4 px-5 sm:px-8">
-          <Quote className="h-9 w-9 sm:h-10 sm:w-10 shrink-0 fill-[#FF5500] text-[#FF5500] mt-1 sm:mt-0" />
-          <div className="space-y-1">
-            <p className="text-sm sm:text-base lg:text-lg text-white font-medium leading-relaxed">
+        <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-8 flex flex-col items-center justify-center text-center space-y-4">
+          <div className="w-14 h-14 rounded-full bg-[#FF5500]/10 border border-[#FF5500]/30 flex items-center justify-center shadow-lg backdrop-blur-sm mb-1">
+            <Quote className="h-7 w-7 fill-[#FF5500] text-[#FF5500]" />
+          </div>
+          <blockquote className="space-y-2">
+            <p className="text-lg sm:text-2xl lg:text-3xl text-white font-medium tracking-tight leading-snug">
               {aboutT.quotePart1}
             </p>
-            <p className="text-sm sm:text-base lg:text-lg text-[#FF5500] font-black leading-relaxed">
+            <p className="text-lg sm:text-2xl lg:text-3xl text-[#FF5500] font-black tracking-tight leading-snug">
               {aboutT.quotePart2}
             </p>
-          </div>
+          </blockquote>
+          <div className="w-16 h-1 bg-[#FF5500] rounded-full mt-3" />
         </div>
       </div>
     </section>
