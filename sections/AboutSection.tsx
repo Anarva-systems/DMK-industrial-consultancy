@@ -59,8 +59,8 @@ export const AboutSection: React.FC = () => {
             </div>
 
             {/* Right Overlapping Angled Dark Container Cards (01, 02, 03) */}
-            <div className="lg:col-span-6 lg:-ml-8">
-              <div className="bg-[#060D1E] rounded-2xl lg:rounded-tl-[3rem] border border-white/10 p-6 sm:p-8 lg:p-10 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-[#FF5500]/40">
+            <div className="lg:col-span-6 lg:-ml-12">
+              <div className="bg-[#060D1E] rounded-2xl lg:rounded-2xl border border-white/10 p-6 sm:p-8 lg:p-10 lg:pl-16 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-[#FF5500]/40 diagonal-image-right">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4 divide-y sm:divide-y-0 sm:divide-x divide-white/15">
                   {aboutT.cards.map((card, index) => {
                     const Icon = cardIcons[index] ?? MapPin;
