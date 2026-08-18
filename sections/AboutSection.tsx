@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import {
   MapPin,
   Settings,
@@ -52,22 +51,10 @@ export const AboutSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Side: Photo + Angled Dark Card Container Stack (01, 02, 03) */}
-            <div className="lg:col-span-6 space-y-6">
-              {/* Top Photo Card */}
-              <div className="relative h-[260px] sm:h-[320px] lg:h-[340px] rounded-2xl overflow-hidden shadow-xl border border-slate-200/80 group">
-                <Image
-                  src="/about-bg.jpg"
-                  alt="DMK Industrial Consultancy About"
-                  fill
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-              </div>
-
-              {/* Bottom Dark Navy Container Cards (01, 02, 03) */}
-              <div className="bg-[#050C18] rounded-2xl border border-white/15 p-6 sm:p-8 lg:p-9 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-[#FF5500]/40">
+            {/* Right Side: Dark Navy Container Cards (01, 02, 03) */}
+            <div className="lg:col-span-6">
+              {/* Dark Navy Container Cards (01, 02, 03) */}
+              <div className="bg-[#050C18] rounded-2xl border border-white/15 p-6 sm:p-8 lg:p-10 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-[#FF5500]/40">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4 divide-y sm:divide-y-0 sm:divide-x divide-white/15">
                   {aboutT.cards.map((card, index) => {
                     const Icon = cardIcons[index] ?? MapPin;
