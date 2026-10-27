@@ -1,0 +1,670 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 244 246 240;
+  --foreground: 15 40 30;
+  --accent-orange: 255 85 0;
+  --paper: #F4F6F0;
+  --paper-alt: #EBEFE6;
+  --ink: #0F281E;
+  --ink-soft: #3D4A41;
+  --muted: #6A7870;
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --didone: "Bodoni Moda", "Fraunces", Didot, serif;
+  --sans: var(--font-inter), "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --tana-paper: #EBEFE6;
+  --tana-paper-dark: #E2E8DC;
+  --tana-ink: #0F281E;
+  --tana-ink-72: rgba(15, 40, 30, 0.72);
+  --tana-rust: #FF5500;
+  --tana-hairline: rgba(15, 40, 30, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  background-color: #F4F6F0;
+  color: #0F281E;
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  selection-background-color: #FF5500;
+  selection-color: #FFFFFF;
+}
+
+::selection {
+  background-color: #FF5500;
+  color: #FFFFFF;
+}
+
+/* Glassmorphism utility classes */
+.glass-panel {
+  background: rgba(15, 22, 38, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: linear-gradient(180deg, rgba(20, 29, 51, 0.6) 0%, rgba(11, 15, 25, 0.8) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 85, 0, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(255, 85, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.glass-input {
+  background: rgba(11, 15, 25, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease-in-out;
+}
+
+.glass-input:focus {
+  outline: none;
+  border-color: #FF5500;
+  box-shadow: 0 0 0 2px rgba(255, 85, 0, 0.2);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EBEFE6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C4CDC4;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF5500;
+}
+
+/* Section decorative backgrounds */
+.dot-grid-tl {
+  background-image: radial-gradient(circle, #d1d5db 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.blueprint-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.diagonal-image-right {
+  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.diagonal-image-left {
+  clip-path: polygon(0 0, 100% 0, 82% 100%, 0 100%);
+}
+
+@media (max-width: 1023px) {
+
+  .diagonal-image-right,
+  .diagonal-image-left {
+    clip-path: none;
+  }
+}
+
+/* Hide dev overlay lightning bolt mark */
+nextjs-portal,
+[data-nextjs-toast],
+[data-nextjs-dialog-overlay] {
+  display: none !important;
+}
+
+/* ==========================================================================
+   Hero Continuous Scrolling Photo Showcase Styles
+   ========================================================================== */
+
+@keyframes heroInfiniteScroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.hero-scroll-track {
+  display: flex;
+  width: max-content;
+  animation: heroInfiniteScroll 36s linear infinite;
+  will-change: transform;
+}
+
+.hero-scroll-container:hover .hero-scroll-track {
+  animation-play-state: paused;
+}
+
+.hero-photo-card {
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.hero-photo-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 40px -10px rgba(15, 40, 30, 0.25);
+  border-color: rgba(255, 85, 0, 0.5);
+}
+
+/* ==========================================================================
+   Falcon AI Operations Overview Triptych Styles
+   ========================================================================== */
+
+.falcon-triptych-wrapper {
+  container-type: inline-size;
+}
+
+.falcon-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(15, 40, 30, 0.08);
+  border-radius: clamp(16px, 1.8cqw, 24px);
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.falcon-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 85, 0, 0.4);
+  box-shadow: 0 16px 36px -8px rgba(255, 85, 0, 0.15), 0 0 20px rgba(255, 85, 0, 0.08);
+}
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 85, 0, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 0 8px rgba(255, 85, 0, 0);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.4s infinite;
+}
+
+.falcon-bar {
+  transition: height 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.group:hover .falcon-bar-1 {
+  height: 80% !important;
+}
+
+.group:hover .falcon-bar-2 {
+  height: 95% !important;
+}
+
+.group:hover .falcon-bar-3 {
+  height: 65% !important;
+}
+
+.group:hover .falcon-bar-4 {
+  height: 100% !important;
+}
+
+.group:hover .falcon-bar-5 {
+  height: 88% !important;
+}
+
+/* ==========================================================================
+   Tana Camps Editorial Animations & Utilities
+   ========================================================================== */
+
+@keyframes spinTicks {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinTicks 16s linear infinite;
+}
+
+.tana-statement-text {
+  font-family: var(--didone);
+  font-size: clamp(32px, 5.4vw, 72px);
+  line-height: 1.18;
+  color: var(--tana-ink);
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+}
+
+.tana-photo-pill {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.86em;
+  height: 0.86em;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin: 0 0.18em;
+  border: 1.5px solid var(--tana-ink);
+  box-shadow: 0 4px 12px rgba(67, 40, 42, 0.15);
+  transform: translateY(-0.06em);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.tana-photo-pill:hover {
+  transform: translateY(-0.12em) scale(1.15);
+  box-shadow: 0 8px 20px rgba(168, 100, 56, 0.3);
+}
+
+.tana-photo-pill img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.tana-photo-pill:hover img {
+  transform: scale(1.2);
+}
+
+/* ==========================================================================
+   Elo One Results & Case Studies Card Architecture
+   ========================================================================== */
+
+.elo-card-1 {
+  background: radial-gradient(circle at 35% 25%, rgb(176, 64, 18) 0%, rgb(46, 13, 4) 100%);
+}
+
+.elo-card-2 {
+  background: linear-gradient(135deg, rgb(236, 96, 28) 0%, rgb(250, 150, 56) 100%);
+}
+
+.elo-card-3 {
+  background: radial-gradient(circle at 65% 25%, rgb(132, 52, 22) 0%, rgb(24, 9, 5) 100%);
+}
+
+.elo-paper-stack {
+  position: relative;
+  width: 100%;
+}
+
+.elo-paper-layer-1 {
+  position: absolute;
+  top: -14px;
+  left: 12px;
+  right: 12px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 14px 14px 0 0;
+  backdrop-filter: blur(6px);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.35s ease;
+}
+
+.elo-paper-layer-2 {
+  position: absolute;
+  top: -7px;
+  left: 6px;
+  right: 6px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 14px 14px 0 0;
+  backdrop-filter: blur(6px);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.35s ease;
+}
+
+.group:hover .elo-paper-layer-1 {
+  transform: translateY(-6px) scaleX(0.98);
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.group:hover .elo-paper-layer-2 {
+  transform: translateY(-3px) scaleX(0.99);
+  background: rgba(255, 255, 255, 0.36);
+}
+
+/* ==========================================================================
+   Meridian Footer Section
+   ========================================================================== */
+
+.footer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--paper-alt, #EBEFE6);
+  isolation: isolate;
+}
+
+.footer__video {
+  order: 2;
+  flex: 1 1 0%;
+  min-height: 0;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: -12vh;
+  margin-top: -12svh;
+  object-fit: cover;
+  object-position: 50% 35%;
+  mix-blend-mode: multiply;
+  position: relative;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.footer__content {
+  order: 1;
+  flex: none;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: clamp(36px, 3.8vw, 52px) 16px 0;
+}
+
+.footer__mark {
+  width: clamp(44px, 4.1vw, 54px);
+  height: auto;
+  color: var(--ink, #0F281E);
+  display: block;
+}
+
+.footer__brand {
+  margin: clamp(6px, 0.9vw, 12px) 0 0;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-variation-settings: "opsz" 72;
+  font-size: clamp(26px, 2.6vw, 36px);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--ink, #0F281E);
+}
+
+.footer__brand a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+
+.footer__tagline {
+  margin: clamp(14px, 1.4vw, 18px) 0 0;
+  font-size: clamp(14px, 1.1vw, 15px);
+  line-height: 1.5;
+  color: var(--ink-soft, #3D4A41);
+  max-width: 44em;
+  font-family: var(--sans);
+}
+
+.footer__nav {
+  margin-top: clamp(20px, 2.2vw, 32px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+}
+
+.footer__nav-row {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 8px;
+}
+
+.footer__nav-row li {
+  display: flex;
+  align-items: center;
+}
+
+.footer__nav-row li+li::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--ink, #0F281E);
+  margin: 0 clamp(12px, 1.4vw, 20px);
+  flex: none;
+}
+
+.footer__nav-row a,
+.footer__nav-row button {
+  position: relative;
+  color: var(--ink, #0F281E);
+  text-decoration: none;
+  font-size: clamp(13px, 1.05vw, 14.5px);
+  font-weight: 500;
+  padding: 3px 0;
+  transition: color 0.2s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: var(--sans);
+  line-height: 1.2;
+}
+
+.footer__nav-row a:hover,
+.footer__nav-row button:hover {
+  color: #FF5500;
+}
+
+.footer__nav-row a::after,
+.footer__nav-row button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.footer__nav-row a:hover::after,
+.footer__nav-row a:focus-visible::after,
+.footer__nav-row button:hover::after,
+.footer__nav-row button:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.footer__nav-row a:focus-visible,
+.footer__nav-row button:focus-visible {
+  outline: 2px solid var(--ink, #0F281E);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.footer__nav-row--sub a {
+  color: var(--ink-soft, #3D4A41);
+  font-size: clamp(12.5px, 1vw, 13.5px);
+  font-weight: 400;
+}
+
+.footer__nav-row--sub li+li::before {
+  background: var(--ink-soft, #3D4A41);
+  opacity: 0.6;
+}
+
+.footer__copy {
+  margin: clamp(18px, 2vw, 26px) 0 0;
+  font-size: 11.5px;
+  color: var(--muted, #6b746c);
+  letter-spacing: 0.01em;
+  font-family: var(--sans);
+}
+
+@media (max-width: 768px) {
+  .footer__nav-row {
+    row-gap: 6px;
+  }
+
+  .footer__nav-row li+li::before {
+    margin: 0 8px;
+  }
+}
+
+@media (max-width: 540px) {
+  .footer__nav {
+    margin-top: 18px;
+    gap: 8px;
+  }
+
+  .footer__nav-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: 4px;
+    gap: 3px 6px;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .footer__nav-row li {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .footer__nav-row li+li::before {
+    display: inline-block;
+    content: "";
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    margin: 0 6px;
+    opacity: 0.45;
+  }
+
+  .footer__nav-row a,
+  .footer__nav-row button {
+    padding: 2px 2px;
+    font-size: 12.5px;
+    line-height: 1.35;
+  }
+
+  .footer__nav-row--primary a {
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  .footer__nav-row--policy a,
+  .footer__nav-row--policy button {
+    font-size: 11px;
+    color: var(--ink-soft, #3D4A41);
+  }
+
+  .footer__nav-row--sub a {
+    font-size: 11px;
+    color: var(--ink-soft, #3D4A41);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .footer__nav-row a::after,
+  .footer__nav-row button::after {
+    transition: none;
+  }
+}
+
+/* ==========================================================================
+   Telugu Typography & Spacing Ergonomics (Prevents Glyph Squeezing & Merging)
+   ========================================================================== */
+
+html[lang="te"],
+.lang-te {
+  font-family: 'Noto Sans Telugu', var(--font-inter), sans-serif;
+}
+
+/* Eliminate negative tracking on Telugu characters so conjuncts and matras do not collide */
+html[lang="te"] h1,
+html[lang="te"] h2,
+html[lang="te"] h3,
+html[lang="te"] h4,
+html[lang="te"] h5,
+html[lang="te"] h6,
+html[lang="te"] p,
+html[lang="te"] span,
+html[lang="te"] a,
+html[lang="te"] button,
+html[lang="te"] li,
+html[lang="te"] blockquote,
+.lang-te h1,
+.lang-te h2,
+.lang-te h3,
+.lang-te h4,
+.lang-te p,
+.lang-te span,
+.lang-te a,
+.lang-te button,
+.lang-te li,
+.lang-te blockquote {
+  letter-spacing: normal !important;
+  word-spacing: 0.03em;
+}
+
+/* Generous line-height for Telugu headings to avoid vertical overlap with above/below lines */
+html[lang="te"] h1,
+.lang-te h1 {
+  line-height: 1.35 !important;
+}
+
+html[lang="te"] h2,
+.lang-te h2 {
+  line-height: 1.38 !important;
+}
+
+html[lang="te"] h3,
+html[lang="te"] h4,
+.lang-te h3,
+.lang-te h4 {
+  line-height: 1.45 !important;
+}
+
+/* Body copy line height for comfortable Telugu readability */
+html[lang="te"] p,
+html[lang="te"] li,
+.lang-te p,
+.lang-te li {
+  line-height: 1.8 !important;
+}
+
+html[lang="te"] .tana-statement-text,
+.lang-te .tana-statement-text {
+  line-height: 1.4 !important;
+  letter-spacing: 0 !important;
+}
+
+html[lang="te"] .footer__tagline,
+.lang-te .footer__tagline {
+  line-height: 1.75 !important;
+  letter-spacing: 0 !important;
+}
